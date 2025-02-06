@@ -47,6 +47,7 @@ for(var channelIndex = 0; channelIndex < numChannels; ++channelIndex) {
 
 // create at least one mapping page
 var page = deviceDriver.mMapping.makePage('Example Mixer Page')
+var page = deviceDriver.mMapping.makePage('PadShop')
 
 // create host accessing objects
 var hostSelectedTrackChannel = page.mHostAccess.mTrackSelection.mMixerChannel
@@ -56,5 +57,5 @@ for(var channelIndex = 0; channelIndex < numChannels; ++channelIndex) {
     var knobSurfaceValue = knobs[channelIndex].mSurfaceValue;
 
     // bind surface elements to host accessing object values
-    page.makeValueBinding(knobSurfaceValue, hostSelectedTrackChannel.mValue.mLevel)
+    page.makeValueBinding(knobSurfaceValue, hostSelectedTrackChannel.mValue.mVolume)
 }
